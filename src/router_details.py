@@ -8,10 +8,6 @@ class Interface:
         self.ip = {}
         self.connect = {}
 
-    def add_ip():
-
-    def add_connect():
-
 r1 = Router('Cisco', 'IOSv', 'R1')
 r2 = Router('Cisco', '3745', 'R2')
 r3 = Router('Juniper', 'MXS', 'R3')
