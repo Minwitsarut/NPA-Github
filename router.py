@@ -23,10 +23,11 @@ class Router:
     def show_int(self):
         print('Show interfaces of ' + self.hostname)
         print(self.hostname + ' has ' + str(len(self.interface)) + ' interfaces')
-        for att in self.interface:
-            print(att)
+        for i in self.interface:
+            print(i)
 
     def show_neighbor(self):
         for att in self.interface:
             print(att + ' ' + self.interface[att][1])
         print('\n')
+
