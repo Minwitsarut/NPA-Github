@@ -12,8 +12,10 @@ class Router:
         self.interface[int_name][0] = ip
 
     def add_connect(self, from_int, to_int, device):
-        self.interface[from_int][1] = 'connect to device ' + device.hostname + ' interface ' + to_int 
-        device.interface[to_int][1] = 'connect to device ' + self.hostname + ' interface ' + from_int 
+        self.interface[from_int][1] = 'connect to device ' + \
+            device.hostname + ' interface ' + to_int
+        device.interface[to_int][1] = 'connect to device ' + \
+            self.hostname + ' interface ' + from_int
 
     def change_hostname(self, new_name):
         self.hostname = new_name
@@ -23,14 +25,13 @@ class Router:
         print(self.hostname + ' has ' + str(len(self.interface)) + ' interfaces')
         for att in self.interface:
             print(att)
-        
+
     def show_neighbor(self):
         for att in self.interface:
             print(att + ' ' + self.interface[att][1])
         print('\n')
 
 
-       
 r1 = Router('Cisco', 'IOSv', 'R1')
 r2 = Router('Cisco', '3745', 'R2')
 r3 = Router('Juniper', 'MXS', 'R3')
@@ -59,7 +60,6 @@ r2.change_hostname('R2-NEW')
 r3.change_hostname('R3-NEW')
 
 
-
 r1.show_int()
 r1.show_neighbor()
 
@@ -72,4 +72,3 @@ r3.show_neighbor()
 
 # r1_dict = r1.__dict__
 # print(r1_dict['hostname'])
-
